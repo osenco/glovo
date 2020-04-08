@@ -1,8 +1,9 @@
 <?php
 
-namespace Glovo\Model;
+namespace Osen\Glovo\Models;
 
-class Order implements \JsonSerializable {
+class Order implements \JsonSerializable
+{
 
   /**
    * The order will be activated on `scheduleTime`
@@ -66,7 +67,8 @@ class Order implements \JsonSerializable {
    */
   private $state;
 
-  public function jsonSerialize() {
+  public function jsonSerialize()
+  {
     $data = [];
 
     if ($this->scheduleTime !== null) {
@@ -87,84 +89,96 @@ class Order implements \JsonSerializable {
   /**
    * @return int
    */
-  public function getId() {
+  public function getId()
+  {
     return $this->id;
   }
 
   /**
    * @param int $id
    */
-  public function setId( $id ) {
+  public function setId($id)
+  {
     $this->id = $id;
   }
 
   /**
    * @return string
    */
-  public function getDescription() {
+  public function getDescription()
+  {
     return $this->description;
   }
 
   /**
    * @param string $description
    */
-  public function setDescription( $description ) {
+  public function setDescription($description)
+  {
     $this->description = $description;
   }
 
   /**
    * @return \DateTime
    */
-  public function getCreationTime() {
+  public function getCreationTime()
+  {
     return $this->creationTime;
   }
 
   /**
    * @param \DateTime $creationTime
    */
-  public function setCreationTime( $creationTime ) {
+  public function setCreationTime($creationTime)
+  {
     $this->creationTime = $creationTime;
   }
 
   /**
    * @return \DateTime
    */
-  public function getScheduleTime() {
+  public function getScheduleTime()
+  {
     return $this->scheduleTime;
   }
 
   /**
    * @param \DateTime $scheduleTime
    */
-  public function setScheduleTime( $scheduleTime ) {
+  public function setScheduleTime($scheduleTime)
+  {
     $this->scheduleTime = $scheduleTime;
   }
 
   /**
    * @return Address[]
    */
-  public function getAddresses() {
+  public function getAddresses()
+  {
     return $this->addresses;
   }
 
   /**
    * @param Address[] $addresses
    */
-  public function setAddresses( $addresses ) {
+  public function setAddresses($addresses)
+  {
     $this->addresses = $addresses;
   }
 
   /**
    * @return string
    */
-  public function getState() {
+  public function getState()
+  {
     return $this->state;
   }
 
   /**
    * @param string $state
    */
-  public function setState( $state ) {
+  public function setState($state)
+  {
     $this->state = $state;
   }
 }

@@ -32,12 +32,13 @@ If you use Composer, these dependencies should be handled automatically. If you 
 
 ## Getting Started
 
-Create an account in Glovo (it can be created from the App). This api **needs a credit card associated to your account**. You can add one from your app and it will be used automatically for any order. In order to get your API credentials you should login in the desired environment and go to *Credentials* section on your profile.
+Create an account in Glovo (it can be created from the App). This api **needs a credit card associated to your account**. You can add one from your app and it will be used automatically for any order. In order to get your API credentials you should login in the desired environment and go to _Credentials_ section on your profile.
 
-* [B2B Production](https://business.glovoapp.com/dashboard/profile)
-* [B2B Sandbox/Test](https://business.testglovo.com/dashboard/profile)
+- [B2B Production](https://business.glovoapp.com/dashboard/profile)
+- [B2B Sandbox/Test](https://business.testglovo.com/dashboard/profile)
 
 Example ApiKey & ApiSecret:
+
 ```php
 $apiKey = '125238463972712';
 $apiSecret = '081f8c9680d457a088b4413a62ddf84c';
@@ -50,9 +51,9 @@ Simple usage looks like:
 
 include 'vendor/autoload.php';
 
-use Glovo\Api;
-use Glovo\Model\Order;
-use Glovo\Model\Address;
+use Osen\Glovo\Service;
+use Osen\Glovo\Models\Order;
+use Osen\Glovo\Models\Address;
 
 
 // get credentials on https://business.glovoapp.com/dashboard/profile or https://business.testglovo.com/dashboard/profile
@@ -75,11 +76,13 @@ $orderInfo = $api->createOrder( $order );
 
 echo "Order created, ID: {$orderInfo['id']}, state: {$orderInfo['state']} \n";
 ```
+
 See full example in [example.php](example.php)
 
 ## Update Certificates
 
 In order to update the CA Root certificates you can run:
+
 ```
 $ chmod +x ./update_certs.php
 $ ./update_certs.php

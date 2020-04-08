@@ -4,7 +4,7 @@ chdir(dirname(__FILE__));
 
 set_time_limit(0); // unlimited max execution time
 
-$fp = fopen(dirname(__FILE__) . '/data/ca-certificates.crt', 'w+');
+$fp = fopen(dirname(__FILE__) . '/certs/ca-certificates.crt', 'w+');
 
 $options = array(
   CURLOPT_FILE    => $fp,

@@ -1,6 +1,6 @@
 <?php
 
-namespace Glovo;
+namespace Osen\Glovo;
 
 class Client {
   const API_BASE_URL_PRODUCTION = "https://api.glovoapp.com/b2b";
@@ -10,23 +10,23 @@ class Client {
    * @param $request
    *
    * @return false|resource
-   * @throws GlovoException
+   * @throws Exception
    */
   private static function build_request( $request ) {
     if (!extension_loaded( "curl" )) {
-      throw new GlovoException( "cURL extension not found. You need to enable cURL in your php.ini or another configuration you have." );
+      throw new Exception( "cURL extension not found. You need to enable cURL in your php.ini or another configuration you have." );
     }
 
     if (!isset( $request["method"] )) {
-      throw new GlovoException( "No HTTP METHOD specified" );
+      throw new Exception( "No HTTP METHOD specified" );
     }
 
     if (!isset( $request["auth"] )) {
-      throw new GlovoException( "No auth specified" );
+      throw new Exception( "No auth specified" );
     }
 
     if (!isset( $request["uri"] )) {
-      throw new GlovoException( "No URI specified" );
+      throw new Exception( "No URI specified" );
     }
 
     $headers = [];
@@ -37,7 +37,7 @@ class Client {
 
     //curl_setopt( $connect, CURLOPT_VERBOSE, true );
 
-    curl_setopt( $connect, CURLOPT_USERAGENT, "Glovo PHP SDK /v" . Api::VERSION );
+    curl_setopt( $connect, CURLOPT_USERAGENT, "Glovo PHP SDK /v" . Service::VERSION );
     curl_setopt( $connect, CURLOPT_RETURNTRANSFER, true );
     curl_setopt( $connect, CURLOPT_SSL_VERIFYPEER, true );
     curl_setopt( $connect, CURLOPT_USERPWD, $request["auth"]["apiKey"] . ":" . $request["auth"]["apiSecret"] );
@@ -60,7 +60,7 @@ class Client {
       if (function_exists( 'json_last_error' )) {
         $json_error = json_last_error();
         if ($json_error != JSON_ERROR_NONE) {
-          throw new GlovoException( "JSON Error [{$json_error}] - Data: " . $request["data"] );
+          throw new Exception( "JSON Error [{$json_error}] - Data: " . $request["data"] );
         }
       }
 
@@ -74,7 +74,7 @@ class Client {
    * @param $request
    *
    * @return array
-   * @throws GlovoException
+   * @throws Exception
    */
   public static function exec( $request ) {
     $connect = self::build_request( $request );
@@ -83,7 +83,7 @@ class Client {
     $api_http_code = curl_getinfo( $connect, CURLINFO_HTTP_CODE );
 
     if ($api_result === false) {
-      throw new GlovoException ( curl_error( $connect ) );
+      throw new Exception ( curl_error( $connect ) );
     }
 
     $response = array(
@@ -92,7 +92,7 @@ class Client {
     );
 
     if ($response['status'] != 200) {
-      throw new GlovoException ( $response['response']['error'], $response['status'] );
+      throw new Exception ( $response['response']['error'], $response['status'] );
     }
 
     curl_close( $connect );

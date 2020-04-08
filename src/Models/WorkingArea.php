@@ -1,8 +1,9 @@
 <?php
 
-namespace Glovo\Model;
+namespace Osen\Glovo\Models;
 
-class WorkingArea {
+class WorkingArea
+{
   private $code;
   private $polygons;
   private $workingTime;

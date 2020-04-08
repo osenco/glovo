@@ -1,5 +1,5 @@
 {
-  "name": "valentinmari/glovo-api-php",
+  "name": "osenco/glovo",
   "description": "Glovo Business API",
   "keywords": [
     "glovo",
@@ -19,7 +19,7 @@
     }
   ],
   "require": {
-    "php": ">=5.4.0",
+    "php": ">=7.2",
     "emcconville/google-map-polyline-encoding-tool": ">=1.2.1",
     "ext-curl": "*",
     "ext-json": "*",
@@ -27,7 +27,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Glovo\\": "lib/"
+      "Osen\\Glovo\\": "src/"
     }
   }
 }

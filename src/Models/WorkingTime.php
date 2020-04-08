@@ -1,8 +1,9 @@
 <?php
 
-namespace Glovo\Model;
+namespace Osen\Glovo\Models;
 
-class WorkingTime {
+class WorkingTime
+{
   private $opening;
   private $duration;
 }

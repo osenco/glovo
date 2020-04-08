@@ -1,8 +1,9 @@
 <?php
 
-namespace Glovo\Model;
+namespace Osen\Glovo\Models;
 
-class Address implements \JsonSerializable {
+class Address implements \JsonSerializable
+{
 
   const TYPE_PICKUP = "PICKUP";
   const TYPE_DELIVERY = "DELIVERY";
@@ -56,7 +57,8 @@ class Address implements \JsonSerializable {
    */
   private $contactPerson;
 
-  public function __construct( $type, $lat, $lng, $label, $details ) {
+  public function __construct($type, $lat, $lng, $label, $details)
+  {
     $this->type = $type;
     $this->lat = $lat;
     $this->lng = $lng;
@@ -64,7 +66,8 @@ class Address implements \JsonSerializable {
     $this->details = $details;
   }
 
-  public function jsonSerialize() {
+  public function jsonSerialize()
+  {
     $data = [];
     $data['type'] = $this->type;
     $data['lat'] = $this->lat;
@@ -90,98 +93,112 @@ class Address implements \JsonSerializable {
   /**
    * @return float
    */
-  public function getLat() {
+  public function getLat()
+  {
     return $this->lat;
   }
 
   /**
    * @param float $lat
    */
-  public function setLat( $lat ) {
+  public function setLat($lat)
+  {
     $this->lat = $lat;
   }
 
   /**
    * @return float
    */
-  public function getLng() {
+  public function getLng()
+  {
     return $this->lng;
   }
 
   /**
    * @param float $lng
    */
-  public function setLng( $lng ) {
+  public function setLng($lng)
+  {
     $this->lng = $lng;
   }
 
   /**
    * @return string
    */
-  public function getType() {
+  public function getType()
+  {
     return $this->type;
   }
 
   /**
    * @param string $type
    */
-  public function setType( $type ) {
+  public function setType($type)
+  {
     $this->type = $type;
   }
 
   /**
    * @return string
    */
-  public function getLabel() {
+  public function getLabel()
+  {
     return $this->label;
   }
 
   /**
    * @param string $label
    */
-  public function setLabel( $label ) {
+  public function setLabel($label)
+  {
     $this->label = $label;
   }
 
   /**
    * @return string
    */
-  public function getDetails() {
+  public function getDetails()
+  {
     return $this->details;
   }
 
   /**
    * @param string $details
    */
-  public function setDetails( $details ) {
+  public function setDetails($details)
+  {
     $this->details = $details;
   }
 
   /**
    * @return string
    */
-  public function getContactPhone() {
+  public function getContactPhone()
+  {
     return $this->contactPhone;
   }
 
   /**
    * @param string $contactPhone
    */
-  public function setContactPhone( $contactPhone ) {
+  public function setContactPhone($contactPhone)
+  {
     $this->contactPhone = $contactPhone;
   }
 
   /**
    * @return string
    */
-  public function getContactPerson() {
+  public function getContactPerson()
+  {
     return $this->contactPerson;
   }
 
   /**
    * @param string $contactPerson
    */
-  public function setContactPerson( $contactPerson ) {
+  public function setContactPerson($contactPerson)
+  {
     $this->contactPerson = $contactPerson;
   }
 }
