@@ -1,33 +1,39 @@
 {
-  "name": "osenco/glovo",
-  "description": "Glovo Business API",
-  "keywords": [
-    "glovo",
-    "delivery",
-    "api"
-  ],
-  "homepage": "https://business.glovoapp.com/",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Valentin Mari <valentinmari@hotmail.com>",
-      "homepage": "https://github.com/vmari"
-    },
-    {
-      "name": "Adán Mauri Ungaro <adan.mauri@gmail.com>",
-      "homepage": "https://github.com/adanmauri"
-    }
-  ],
-  "require": {
-    "php": ">=7.2",
-    "emcconville/google-map-polyline-encoding-tool": ">=1.2.1",
-    "ext-curl": "*",
-    "ext-json": "*",
-    "ext-mbstring": "*"
-  },
-  "autoload": {
-    "psr-4": {
-      "Osen\\Glovo\\": "src/"
-    }
-  }
+	"name": "osenco/glovo",
+	"description": "Glovo Business API PHP Integration",
+	"keywords": [
+		"glovo",
+		"delivery",
+		"api",
+		"osen"
+	],
+	"homepage": "https://business.glovoapp.com/",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Osen Concepts",
+			"homepage": "https://osen.co.ke",
+			"email": "hi@osen.co.ke"
+		},
+		{
+			"name": "Valentin Mari <valentinmari@hotmail.com>",
+			"homepage": "https://github.com/vmari"
+		},
+		{
+			"name": "Adán Mauri Ungaro <adan.mauri@gmail.com>",
+			"homepage": "https://github.com/adanmauri"
+		}
+	],
+	"require": {
+		"php": ">=7.2",
+		"emcconville/google-map-polyline-encoding-tool": ">=1.2.1",
+		"ext-curl": "*",
+		"ext-json": "*",
+		"ext-mbstring": "*"
+	},
+	"autoload": {
+		"psr-4": {
+			"Osen\\Glovo\\": "src/"
+		}
+	}
 }

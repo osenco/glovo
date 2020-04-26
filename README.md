@@ -55,15 +55,15 @@ use Osen\Glovo\Models\Order;
 use Osen\Glovo\Models\Address;
 
 // get credentials on https://business.glovoapp.com/dashboard/profile or https://business.testglovo.com/dashboard/profile
-$api = new Api( $apiKey, $apiSecret);
+$api = new Service( $apiKey, $apiSecret);
 $api->sandbox_mode( true );
 
-$sourceDir = new Address( Address::TYPE_PICKUP, -34.919861, -57.919027, "Diag. 73 1234", "1st floor" );
-$destDir = new Address( Address::TYPE_DELIVERY, -34.922945, -57.990177, "Diag. 73 75", "3A");
+$source = new Address( Address::TYPE_PICKUP, -34.919861, -57.919027, "Diag. 73 1234", "1st floor" );
+$destination = new Address( Address::TYPE_DELIVERY, -34.922945, -57.990177, "Diag. 73 75", "3A");
 
 $order = new Order();
 $order->setDescription( "1 big hammer" );
-$order->setAddresses( [$sourceDir, $destDir] );
+$order->setAddresses( [$source, $destination] );
 //$order->setScheduleTime( ( new \DateTime( '+1 hour' ) )->setTime( 19, 0 ) );
 
 try {
