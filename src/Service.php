@@ -3,6 +3,7 @@
 namespace Osen\Glovo;
 
 use Osen\Glovo\Models\Order;
+use Osen\Glovo\Client;
 
 class Service
 {

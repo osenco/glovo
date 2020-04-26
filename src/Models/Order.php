@@ -71,15 +71,15 @@ class Order implements \JsonSerializable
   {
     $data = [];
 
-    if ($this->scheduleTime !== null) {
+    if (!is_null($this->scheduleTime)) {
       $data['scheduleTime'] = $this->scheduleTime->getTimestamp();
     }
 
-    if ($this->description !== null) {
+    if (!is_null($this->description)) {
       $data['description'] = $this->description;
     }
 
-    if ($this->addresses !== null) {
+    if (!is_null($this->addresses)) {
       $data['addresses'] = $this->addresses;
     }
 

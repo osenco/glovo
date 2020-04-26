@@ -4,6 +4,6 @@ namespace Osen\Glovo\Models;
 
 class WorkingTime
 {
-  private $opening;
-  private $duration;
+	private $opening;
+	private $duration;
 }
